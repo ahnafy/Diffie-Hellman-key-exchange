@@ -7,12 +7,11 @@ import java.util.Map;
 public class BabyStepGiantStep {
 
     public static void main(String[] args) {
-        System.out.println(babyStepGiantStep(BigInteger.valueOf(23834099), BigInteger.valueOf(3), BigInteger.valueOf(8)));
+        System.out.println(babyStepGiantStep(BigInteger.valueOf(47186099), BigInteger.valueOf(8), BigInteger.valueOf(5)));
     }
 
     public static BigInteger babyStepGiantStep(BigInteger cyclicGroup, BigInteger alpha, BigInteger beta) {
-        BigInteger cardinality = cyclicGroup.subtract(BigInteger.ONE);
-        BigInteger m = sqrt(cardinality);
+        BigInteger m = sqrt(cyclicGroup.subtract(BigInteger.valueOf(1)));
         Map<Integer, BigInteger> alphaStore = new HashMap<>();
 
         for (int j = 0; j < m.intValue(); j++) {
@@ -20,19 +19,16 @@ public class BabyStepGiantStep {
             alphaStore.put(j, alphaPowJ);
         }
 
-        BigInteger mInverse = alpha.modInverse(cyclicGroup);
-
-        BigInteger y = beta;
+        BigInteger mInverse = alpha.modPow(m.multiply(cyclicGroup.subtract(BigInteger.valueOf(2))), cyclicGroup);
 
         for (int i = 0; i < m.intValue(); i++) {
+            BigInteger y = (beta.multiply(mInverse.modPow(BigInteger.valueOf(i), cyclicGroup))).mod(cyclicGroup);
             for (Map.Entry<Integer, BigInteger> entry : alphaStore.entrySet()) {
                 if (y.equals(entry.getValue())) {
 
                     return (m.multiply(BigInteger.valueOf(i)).add(BigInteger.valueOf(entry.getKey())));
                 }
             }
-            //System.out.println(y);
-            y = y.multiply(mInverse);
         }
 
         return null;
