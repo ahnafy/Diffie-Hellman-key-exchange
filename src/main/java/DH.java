@@ -12,10 +12,12 @@ package src.main.java;// Lab done by Khondoker Ahnaf Prio and Charles Menne
 
 // shared key using our p and g = 19081956
 // a = 69
+// b =
 
 
 // shared key using his p and g = 36283730
 // b = 1337
+// a = 420
 
 import java.math.BigInteger;
 
