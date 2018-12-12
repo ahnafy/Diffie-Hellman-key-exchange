@@ -2,6 +2,10 @@ package src.main.java;
 
 import java.util.Scanner;
 
+
+// DISCLAIMER: NOT USED FOR BREAKING KEYS
+// WAS OUR FIRST ATTEMPT
+
 public class PollardRho
 {
     private static final long C = 1;
