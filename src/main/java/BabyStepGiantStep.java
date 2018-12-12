@@ -5,10 +5,15 @@ import java.util.HashMap;
 import java.util.Map;
 
 public class BabyStepGiantStep {
-
     public static void main(String[] args) {
-        System.out.println(babyStepGiantStep(BigInteger.valueOf(47186099), BigInteger.valueOf(8), BigInteger.valueOf(5)));
+        System.out.println(babyStepGiantStep(BigInteger.valueOf(199993643), BigInteger.valueOf(5), BigInteger.valueOf(41070802)));
     }
+
+//  Our value which was 69 returns when we use our algorithm
+//  Matt Munn's return as 420
+//  Avery and Kai Zang's return as 2467
+//  David Chong's return as 5047569
+//  Abe and Francisco's return as 363313
 
     public static BigInteger babyStepGiantStep(BigInteger cyclicGroup, BigInteger alpha, BigInteger beta) {
         BigInteger m = sqrt(cyclicGroup.subtract(BigInteger.valueOf(1)));
