@@ -12,7 +12,7 @@ package src.main.java;// Lab done by Khondoker Ahnaf Prio and Charles Menne
 
 // shared key using our p and g = 19081956
 // a = 69
-// b =
+// b = 100
 
 
 // shared key using his p and g = 36283730
